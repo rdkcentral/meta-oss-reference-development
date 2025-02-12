@@ -16,6 +16,7 @@ BBLAYERS ?= " \
   ${MANIFEST_PATH_OPENEMBEDDED}/meta-multimedia \
   ${MANIFEST_PATH_OPENEMBEDDED}/meta-networking \
   ${MANIFEST_PATH_RDK_AUXILIARY} \
+  ${MANIFEST_PATH_OSS_EXT} \
   "
 
 BBLAYERS =+ "${@'${MANIFEST_PATH_COMMON_CONFIG}' if os.path.isfile('${MANIFEST_PATH_COMMON_CONFIG}/conf/layer.conf') else ''}"
