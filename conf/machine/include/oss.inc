@@ -1,6 +1,6 @@
 DISTRO_VERSION = "2.0"
 DISTRO_NAME="RDK (A Yocto Project based Distro)"
-
+TARGET_VENDOR = "-rdk"
 # The Artifactory for OSS IPK has to be added later
 RDK_ARTIFACTS_BASE_URL ?= ""
 CMF_GIT_ROOT ?= "git://code.rdkcentral.com/r"
