@@ -1,6 +1,5 @@
 DISTRO_VERSION = "2.0"
 DISTRO_NAME="RDK (A Yocto Project based Distro)"
-TARGET_VENDOR = "-rdk"
 
 #Mirror configurations
 PREMIRRORS ?= "\
@@ -29,6 +28,3 @@ DISTRO_FEATURES_BACKFILL_CONSIDERED += "ldconfig"
 DISTRO_FEATURES:append = " gobject-introspection-data"
 
 PREFERRED_PROVIDER_virtual/kernel = ""
-
-# Disable layer consumption for oss layer
-USER_CLASSES:remove = "base-deps-resolver"
