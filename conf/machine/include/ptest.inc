@@ -12,12 +12,11 @@ LICENSE_FLAGS_ACCEPTED:append = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest'
 INCOMPATIBLE_LICENSE:remove = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', ' GPL-3.0-only LGPL-3.0-only LGPL-3.0-or-later GPL-3.0-or-later', '', d)}"
 
 # Version preferences
-PREFERRED_VERSION_libarchive = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', '3.6.2', '', d)}"
 PREFERRED_VERSION_gmp = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', '6.2.1', '', d)}"
 PREFERRED_VERSION_coreutils = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', '9.0', '', d)}"
 PREFERRED_VERSION_m4 = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', '1.4.19', '', d)}"
-PREFERRED_VERSION_sed = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', '4.1.2', '', d)}"
 CFLAGS:append:pn-glibc-tests = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', ' -Wno-error=format-overflow', '', d)}"
+
 PTEST_ENABLED:pn-bluez5 = "0"
 BBMASK:append = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', ' meta-rdk-oss-reference/recipes-gplv2/gettext/gettext_0.16.1.bb ', '', d)}"
 
