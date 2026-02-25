@@ -4,7 +4,7 @@ PTEST_ENABLED = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', '1', '', d)}"
 # Image content: What to include in the image (when ptest enabled)
 EXTRA_IMAGE_FEATURES:append = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', ' ptest-pkgs', '', d)}"
 
-# For following recipes enabling ptest results in failure so removed them will work on enabling in upcoming releases
+# For the following recipes enabling ptest results in failure so removed them will work on enabling in upcoming releases
 IMAGE_INSTALL:remove = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', ' gdbm-ptest pango-ptest bluez5-ptest findutils-ptest lttng-tools-ptest', '', d)}"
 
 # License policy: What licenses are acceptable in this build
@@ -21,6 +21,7 @@ CFLAGS:append:pn-glibc-tests = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest',
 PTEST_ENABLED:pn-bluez5 = "0"
 BBMASK:append = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', ' meta-rdk-oss-reference/recipes-gplv2/gettext/gettext_0.16.1.bb ', '', d)}"
 
+# Adding components for which ptest support is newly added
 PTESTS_FAST:append = " alsa-lib-ptest \
                 libatomic-ops-ptest \
                 libcheck-ptest \
