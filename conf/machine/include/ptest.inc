@@ -40,4 +40,16 @@ PTESTS_FAST:append = " alsa-lib-ptest \
                 lz4-ptest \
                 gmp-ptest \
                 opkg-utils-ptest \
+                iproute2-ptest \
+                procps-ptest \
+                libffi-ptest \
+                iptables-ptest \
+                libarchive-ptest \
+                liburcu-ptest \
+                libxcrypt-ptest \
+                binutils-ptest \
+                ncurses-ptest \
+                dtc-ptest \
+                psmisc-ptest \
+                libtool-ptest \
               "
