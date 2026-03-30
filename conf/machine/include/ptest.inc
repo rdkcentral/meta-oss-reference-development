@@ -19,6 +19,7 @@ CFLAGS:append:pn-glibc-tests = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest',
 PREFERRED_VERSION_gmp = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', '6.2.1', '', d)}"
 PREFERRED_VERSION_coreutils = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', '9.0', '', d)}"
 PREFERRED_VERSION_m4 = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', '1.4.19', '', d)}"
+PREFERRED_VERSION_libarchive = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', '3.6.1', '', d)}"
 BBMASK:append = "${@bb.utils.contains('DISTRO_FEATURES', 'ptest', ' meta-rdk-oss-reference/recipes-gplv2/gettext/gettext_0.16.1.bb ', '', d)}"
 
 # Adding components for which ptest support is newly added
