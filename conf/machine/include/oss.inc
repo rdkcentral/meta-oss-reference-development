@@ -17,13 +17,11 @@ http://.*/.*     http://96.118.132.221/pub/sources/ \n \
 https://.*/.*    http://96.118.132.221/pub/sources/ \n"
 
 
-BB_DANGLINGAPPENDS_WARNONLY = "true"
 
-TCLIBCAPPEND = ""
 
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio"
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "gobject-introspection-data"
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "ldconfig"
+DISTRO_FEATURES_OPTED_OUT += "pulseaudio"
+DISTRO_FEATURES_OPTED_OUT += "gobject-introspection-data"
+DISTRO_FEATURES_OPTED_OUT += "ldconfig"
 
 DISTRO_FEATURES:append = " gobject-introspection-data"
 
