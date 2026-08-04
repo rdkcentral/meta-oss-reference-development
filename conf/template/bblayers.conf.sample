@@ -29,3 +29,4 @@ BBLAYERS =+ "${@d.getVar('MANIFEST_PATH_STACK_LAYERING_SUPPORT') if d.getVar('MA
 BBLAYERS =+ "${@d.getVar('MANIFEST_PATH_DOCKER_GENERATOR') if d.getVar('MANIFEST_PATH_DOCKER_GENERATOR') is not None and os.path.isfile(d.getVar('MANIFEST_PATH_DOCKER_GENERATOR') + '/conf/layer.conf') else ''}"
 BBLAYERS =+ "${@d.getVar('MANIFEST_PATH_META_RDK_BLUETOOTH') if d.getVar('MANIFEST_PATH_META_RDK_BLUETOOTH') is not None and os.path.isfile(d.getVar('MANIFEST_PATH_META_RDK_BLUETOOTH') + '/conf/layer.conf') else ''}"
 BBLAYERS =+ "${@d.getVar('MANIFEST_PATH_META_BINDER') if d.getVar('MANIFEST_PATH_META_BINDER') is not None and os.path.isfile(d.getVar('MANIFEST_PATH_META_BINDER') + '/conf/layer.conf') else ''}"
+BBLAYERS =+ "${@d.getVar('MANIFEST_PATH_OSS_EXT_VENDOR') if d.getVar('MANIFEST_PATH_OSS_EXT_VENDOR') is not None and os.path.isfile(d.getVar('MANIFEST_PATH_OSS_EXT_VENDOR') + '/conf/layer.conf') else ''}"
