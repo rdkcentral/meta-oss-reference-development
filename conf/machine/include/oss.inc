@@ -1,5 +1,5 @@
 DISTRO_VERSION = "2.0"
-DISTRO_NAME="RDK (A Yocto Project based Distro)"
+DISTRO_NAME = "RDK (A Yocto Project based Distro)"
 
 #Mirror configurations
 PREMIRRORS ?= "\
@@ -16,14 +16,7 @@ ftp://.*/.*      http://96.118.132.221/pub/sources/ \n \
 http://.*/.*     http://96.118.132.221/pub/sources/ \n \
 https://.*/.*    http://96.118.132.221/pub/sources/ \n"
 
-
-BB_DANGLINGAPPENDS_WARNONLY = "true"
-
-TCLIBCAPPEND = ""
-
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "pulseaudio"
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "gobject-introspection-data"
-DISTRO_FEATURES_BACKFILL_CONSIDERED += "ldconfig"
+require ${@bb.utils.contains('LAYERSERIES_CORENAMES', 'wrynose', 'conf/machine/include/oss-feature-optouts-wrynose.inc', 'conf/machine/include/oss-feature-optouts-legacy.inc', d)}
 
 DISTRO_FEATURES:append = " gobject-introspection-data"
 
