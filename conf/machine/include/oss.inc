@@ -16,15 +16,7 @@ ftp://.*/.*      http://96.118.132.221/pub/sources/ \n \
 http://.*/.*     http://96.118.132.221/pub/sources/ \n \
 https://.*/.*    http://96.118.132.221/pub/sources/ \n"
 
-python () {
-    features = " pulseaudio gobject-introspection-data ldconfig"
-    core_names = (d.getVar("LAYERSERIES_CORENAMES") or "").split()
-
-    if "wrynose" in core_names:
-        d.appendVar("DISTRO_FEATURES_OPTED_OUT", features)
-    else:
-        d.appendVar("DISTRO_FEATURES_BACKFILL_CONSIDERED", features)
-}
+require ${@bb.utils.contains('LAYERSERIES_CORENAMES', 'wrynose', 'conf/machine/include/oss-feature-optouts-wrynose.inc', 'conf/machine/include/oss-feature-optouts-legacy.inc', d)}
 
 DISTRO_FEATURES:append = " gobject-introspection-data"
 
